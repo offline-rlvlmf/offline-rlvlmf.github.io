@@ -112,7 +112,29 @@
 </section>
 
 <!-- Add more sections for methodology, experiments, etc., as per the paper -->
-
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Methods</h2>
+        <div class="content has-text-centered">
+          <img src="./images/Offline RL-VLM-F method.png" alt="Methods Figure" style="border: 2px solid gray; border-radius: 15px; box-shadow: 0px 0px 10px #999; padding: 5px; max-width: 100%;">
+          <p class="subtitle has-text-centered" style="margin-top: 10px;">
+            Top: Our system, Offline RL-VLM-F, combines RL-VLM-F [1] with offline RL for effective policy learning from
+unlabeled datasets. Given an unlabeled dataset without rewards, it first samples observation pairs, and queries a Vision
+Language Model for preferences given a text description of the task. Using the preference labels, it then learns a reward
+model via preference-based reward learning. The learned reward model is utilized to label the entire offline dataset. Finally,
+it performs offline RL with the labeled dataset to learn a policy that solves the task. Bottom: we follow the same VLM
+querying process as in RL-VLM-F. It consists of two stages: the first is an analysis stage that asks the VLM to analyze
+and compare the two images; the second is the labeling stage, where the VLM generates the preference labels based on its
+own analysis from the first stage and the task description.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <footer class="footer">
   <div class="container">
     <div class="content has-text-centered">
