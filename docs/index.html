@@ -84,7 +84,7 @@
         Your browser does not support the video tag.
       </video>
       <h2 class="subtitle has-text-centered">
-        Combining RL-VLM-F with offline RL for policy learning from unlabeled datasets
+        Combining preference based reward learning from Vision-Language Models with offline RL for policy learning from unlabeled datasets
       </h2>
     </div>
   </div>
@@ -98,7 +98,12 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p style="font-size: 18px;">
-            Offline reinforcement learning can enable policy learning from pre-collected, sub-optimal datasets without online interactions. We propose a novel system that uses preference feedback from vision-language models and textual task descriptions to generate reward labels automatically for offline datasets. This system is tested on complex real-world robot-assisted dressing tasks and shows significant improvement over baseline methods.
+          Offline reinforcement learning can enable policy learning from pre-collected, sub-optimal datasets without online interactions. This makes it ideal for real-world robots and safety-critical scenarios, where collecting online data or expert demonstrations is slow, costly, and risky. However, most existing offline RL works assume the dataset is already labeled with the task rewards, a process that often requires significant human effort, especially when ground-truth states are hard to ascertain (e.g., in the real-world).
+          In this paper, we build on prior work, specifically RL-VLM-F, and propose a novel system that automatically generates reward labels for offline datasets using preference feedback from a vision-language model and a text description of the task. 
+           Our method then learns a policy using offline RL with the reward-labeled dataset. We demonstrate the system's applicability to a complex real-world robot-assisted dressing task, where we first learn a reward function using a vision-language model %based on point cloud observations 
+            on a sub-optimal offline dataset, and then %label the sub-optimal offline dataset with the learned reward and 
+            we use the learned reward to employ Implicit Q learning to develop an effective dressing policy. Our method also performs well in simulation tasks involving %classic control and 
+            the manipulation of rigid and deformable objects, and significantly outperform baselines such as behavior cloning and inverse RL. In summary, we propose a new system that enables automatic reward labeling and policy learning from unlabeled, sub-optimal offline datasets.
           </p>
         </div>
       </div>
